@@ -203,7 +203,7 @@ This object reCaptchaVerification can also be in the well-known manifest, in cas
 
 ## Ready to join?
 
-When you have implemented it, you can get in touch with us by email and we'll add you website to the list : [dev-relationship (at) dashlane.com](mailto:dev-relationship@dashlane.com).
+When you have implemented it, you can get in touch with us by email and we'll add your website to the list : [dev-relationship (at) dashlane.com](mailto:dev-relationship@dashlane.com).
 
 If you have any question on this process use the same email or open an issue on the repository.
 
