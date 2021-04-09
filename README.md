@@ -1,19 +1,19 @@
 # Password Changer .well-known [DRAFT]
 
-The goal of this respository is to provide a documentation for using password changer .well-known and be listed as compatible on Dashlane's automatic password changer feature.
+The goal of this respository is to provide documentation for using password changer .well-known and be listed as compatible on Dashlane's automatic password changer feature.
 
 ## Introduction
 
-The password changer is able to do automatic password update by calling a compatible service's API endpoint.
+Password changer provides the ability to automatically update passwords by calling a compatible service's API endpoint.
 
 In order to be compatible, a service needs:
 
--   a .well-known file placed at the web root of the service describing the API endpoint to call
+-   have a .well-known file placed at the web root of the service describing the API endpoint to call
 -   an API endpoint that will receive the password change request
 
 ## Implementing the .well-known on your server
 
-The following json file should be put on your web root at `/.well-known/password-changer`.
+The following JSON file should be placed at the root of your website: `/.well-known/password-changer`.
 
 ```js
 {
@@ -33,7 +33,7 @@ The following json file should be put on your web root at `/.well-known/password
 }
 ```
 
-The `auth` parameter defines how Password Changer will authenticate to the service API. Please, refer to the next section for the available auth options.
+The `auth` parameter defines how Password Changer will authenticate to the service API. Please refer to the next section for the available auth options.
 
 The `url` parameter defines the address of the API endpoint where password changer will send requests.
 
@@ -197,13 +197,13 @@ Dashlane only supports two main methods of verification for now:
     }
     ```
 
-In the reply, the parameter verificationResponse will be the [response token](https://developers.google.com/recaptcha/docs/verify), usually called `g-recaptcha-response`.
+In the response, the parameter `verificationResponse` will be the [response token](https://developers.google.com/recaptcha/docs/verify), usually called `g-recaptcha-response`.
 
-This object reCaptchaVerification can also be in the well-known manifest, in case you always need a verified captcha.
+This object `reCaptchaVerification` can also be in the well-known manifest, in case you always need a verified captcha.
 
 ## Ready to join?
 
-When you have implemented it, you can get in touch with us by email and we'll add your website to the list : [dev-relationship (at) dashlane.com](mailto:dev-relationship@dashlane.com).
+Once you have implemented this you can get in touch with us by email and we'll add your website to the list : [dev-relationship (at) dashlane.com](mailto:dev-relationship@dashlane.com).
 
 If you have any question on this process use the same email or open an issue on the repository.
 
