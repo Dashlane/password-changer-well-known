@@ -91,70 +91,28 @@ If the change is successful, you should reply a **200 response** with `OK` statu
 
 In case of an error, you should reply a **401 response** and we support the following error codes:
 
-```json
-{
-    "LOGIN.PASSWORD_INCORRECT": {
-        "description": "Incorrect user supplied password."
-    },
-    "LOGIN.NOT_FOUND": {
-        "description": "Login supplied by user not present in site authentication database."
-    },
-    "LOGIN.GENERIC_FAILURE": {
-        "description": "Incorrect credentials, login or password."
-    },
-    "LOGIN.ACCOUNT_LOCKED": {
-        "description": "The user account is locked."
-    },
-    "SECURITY_REQUIREMENT.TOO_SHORT": {
-        "description": "The new password is too short."
-    },
-    "SECURITY_REQUIREMENT.TOO_LONG": {
-        "description": "The new password is too long."
-    },
-    "SECURITY_REQUIREMENT.CAN_NOT_REUSE_PREVIOUS_PASSWORD": {
-        "description": "The new password must be different from the old password."
-    },
-    "SECURITY_REQUIREMENT.NO_SEQUENTIAL_CHARS": {
-        "description": "The password can't contain a sequence of the same character."
-    },
-    "USER.PROFILE_INCOMPLETE": {
-        "description": "The user must complete their profile before being able to change their password."
-    },
-    "USER.ACCOUNT_NOT_VERIFIED": {
-        "description": "The user account is not verified. Typically a link sent by email during the registration has not been clicked."
-    },
-    "USER.NEEDS_TO_ACCEPT_TOS": {
-        "description": "The user must accept Term Of Service."
-    },
-    "NEED_USER_ACTION": {
-        "description": "There's something that prevent us to change user password (unpaid bill...)."
-    },
-    "WEBSITE_UNAVAILABLE": {
-        "description": "The site is in maintenance, not accessible."
-    },
-    "SECURITY_REQUIREMENT.NOT_STRONG_ENOUGH": {
-        "description": "New password rejected by site password policies."
-    },
-    "ABORTED": {
-        "description": "Password change has been interrupted."
-    },
-    "VERIFICATION.METHOD_VERIFICATION_FAIL": {
-        "description": "(NA)"
-    },
-    "VERIFICATION.WRONG_CODE": {
-        "description": "Bad user challenge code."
-    },
-    "VERIFICATION.TIMEOUT": {
-        "description": "The user challenge resolution is taking too long."
-    },
-    "VERIFICATION.UNKNOWN_VERIFICATION_ERROR": {
-        "description": "Something bad happened while solving a user challenge."
-    },
-    "UNKNOWN_ERROR": {
-        "description": "Something bad happened."
-    }
-}
-```
+| **Error code**                                       | **Description**                                                                                                |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| LOGIN.PASSWORD_INCORRECT                             | Incorrect user supplied password.                                                                              |
+| LOGIN.NOT_FOUND                                      | Login supplied by user not present in site authentication database.                                            |
+| LOGIN.GENERIC_FAILURE                                | Incorrect credentials, login or password.                                                                      |
+| LOGIN.ACCOUNT_LOCKED                                 | The user account is locked.                                                                                    |
+| SECURITY_REQUIREMENT.TOO_SHORT                       | The new password is too short.                                                                                 |
+| SECURITY_REQUIREMENT.TOO_LONG                        | The new password is too long.                                                                                  |
+| SECURITY_REQUIREMENT.CAN_NOT_REUSE_PREVIOUS_PASSWORD | The new password must be different from the old password.                                                      |
+| SECURITY_REQUIREMENT.NO_SEQUENTIAL_CHARS             | The password can't contain a sequence of the same character.                                                   |
+| USER.PROFILE_INCOMPLETE                              | The user must complete their profile before being able to change their password.                               |
+| USER.ACCOUNT_NOT_VERIFIED                            | The user account is not verified. Typically a link sent by email during the registration has not been clicked. |
+| USER.NEEDS_TO_ACCEPT_TOS                             | The user must accept Term Of Service.                                                                          |
+| NEED_USER_ACTION                                     | There's something that prevent us to change user password (unpaid bill...).                                    |
+| WEBSITE_UNAVAILABLE                                  | The site is in maintenance, not accessible.                                                                    |
+| SECURITY_REQUIREMENT.NOT_STRONG_ENOUGH               | New password rejected by site password policies.                                                               |
+| ABORTED                                              | Password change has been interrupted.                                                                          |
+| VERIFICATION.METHOD_VERIFICATION_FAIL                | (NA)                                                                                                           |
+| VERIFICATION.WRONG_CODE                              | Bad user challenge code.                                                                                       |
+| VERIFICATION.TIMEOUT                                 | The user challenge resolution is taking too long.                                                              |
+| VERIFICATION.UNKNOWN_VERIFICATION_ERROR              | Something bad happened while solving a user challenge.                                                         |
+| UNKNOWN_ERROR                                        | Something bad happened.                                                                                        |
 
 ### Captcha and 2FA
 
