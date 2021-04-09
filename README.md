@@ -15,7 +15,7 @@ In order to be compatible, a service needs:
 
 The following json file should be put on your web root at `/.well-known/password-changer`.
 
-```json
+```js
 {
     "version": "1.0",
     "endpoints": [
@@ -168,7 +168,7 @@ Dashlane only supports two main methods of verification for now:
 1. `2faVerification`:
    Reply should be the following :
 
-    ```json
+    ```js
     {
         "status": "NEED_VERIFICATION",
         "verificationType": "2FA",
@@ -185,7 +185,7 @@ Dashlane only supports two main methods of verification for now:
 
 2. `reCaptchaVerification`:
 
-    ```json
+    ```js
     {
         "status": "NEED_VERIFICATION",
         "verificationType": "RECAPTCHA_V2",
