@@ -22,11 +22,11 @@ The following JSON file should be placed at the root of your website: `/.well-kn
         // Multiple endpoints, allowing for a test endpoint
         {
             "auth": "Form",
-            "url": "https://api.example.com/1.0/password_changer" // Must be https
+            "url": "https://example.com/api/1.0/password_changer" // Must be https
         },
         {
             "auth": "Form",
-            "url": "https://api.example.com/1.0/password_changer_qa", // Must be https
+            "url": "https://example.com/api/1.0/password_changer_qa", // Must be https
             "allowList": ["hashOfEmail1", "hashOfEmail1"] // SHA256 hash list of authorized logins
         }
     ]
@@ -36,6 +36,9 @@ The following JSON file should be placed at the root of your website: `/.well-kn
 The `auth` parameter defines the authenticattion method for the API endpoint. Please refer to the next section for the authentication methods currently supported by Dashlane Password Changer.
 
 The `url` parameter defines the address of the API endpoint that implements the changing of the service password, which can be used by password managers.
+
+**Current limitation:** the API endpoint must be placed at the root of your domain, sharing the same origin as the well-known.
+For instance, `mydomain.com/endpoint` would work, `api.mydomain.com/endpoint` would not.
 
 The `allowList` parameter defines a list of authorized logins that will be allowed to use a specific endpoint.
 For instance, if you need to do some testing of a new API endpoint, you can set the hash (SHA256) of your Dashlane's account login in this list.
