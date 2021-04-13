@@ -37,7 +37,7 @@ The `auth` parameter defines the authenticattion method for the API endpoint. Pl
 
 The `url` parameter defines the address of the API endpoint that implements the changing of the service password, which can be used by password managers.
 
-A current limitation is that these endpoints must be placed at the root of your website, sharing the same origin.
+**Current limitation:** the API endpoint must be placed at the root of your domain, sharing the same origin as the well-known.
 For instance, `mydomain.com/endpoint` would work, `api.mydomain.com/endpoint` would not.
 
 The `allowList` parameter defines a list of authorized logins that will be allowed to use a specific endpoint.
