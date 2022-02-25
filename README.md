@@ -60,7 +60,7 @@ curl --location --request POST 'https://api.example.com/api/changePassword' \
 
 The 3 expected body fields are:
 
--   `username` (string)
+-   `login` (string)
 -   `password` (string)
 -   `newPassword` (string)
 
@@ -131,7 +131,7 @@ The password manager will then request the user to complete the challenge, after
 
 Two parameters, `verificationResponse` and optionally `verificationResponseKey`, will be sent alongside the regular parameters.
 
-Currently two verification methods are supported by Dashlane:
+Currently three verification methods are supported by Dashlane:
 
 1. `2faVerification`:
    Reply should be the following :
@@ -165,9 +165,23 @@ Currently two verification methods are supported by Dashlane:
     }
     ```
 
+3. `hCaptchaVerification`:
+
+    ```js
+    {
+        "status": "NEED_VERIFICATION",
+        "verificationType": "HCAPTCHA",
+        "reCaptchaVerification": {
+            "sitekey": "aee5754c-d9ab-47c6-aa5e-01f8bbdfd4bb", // Sitekey, provided by hcaptcha
+            "domain": "dashlane-hcaptcha.com", // Optional. The domain must be whitelisted in your recaptcha interface
+            "responseKey": "jkf3kf32ewfji32ijgger" // Optional. We can send this key back with the user response
+        }
+    }
+    ```
+
 In the response, the parameter `verificationResponse` will be the [response token](https://developers.google.com/recaptcha/docs/verify), usually called `g-recaptcha-response`.
 
-This object `reCaptchaVerification` can also be in the well-known manifest, in case you always need a verified captcha.
+These objects `reCaptchaVerification` and `hCaptchaVerification` can also be in the well-known manifest, in case you always need a verified captcha.
 
 ## Ready to join?
 
